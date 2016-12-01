@@ -77,8 +77,20 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 0) you'd get [0,0,0]
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
+var thearraytouse = [1,2,3];
+var themultinum = 5;
+function multiplyNumbers (test3,test4){
+var newset = [];
+  for (let i=0; i<test3.length; i++){
+    done1 = test3[i] * test4;
+    newset.splice(i,0,done1);
+  }
+  return newset;
+}
 
+multiplyNumbers(thearraytouse,themultinum);
 
+console.log(multiplyNumbers(thearraytouse,themultinum));
 
 
 
