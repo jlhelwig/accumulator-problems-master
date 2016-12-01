@@ -217,10 +217,35 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
+var typetest = ["a", "b", "c"];
+function flipArray(arr) {
+  var rv = {};
+  for (var i = 0; i < arr.length; ++i){
+    if (arr[i] !== undefined) rv[i] = arr[i];}
+  return rv;
+}
+flipArray (typetest);
+console.log(flipArray (typetest));
+
+
+
+// This looked right, but didn't pass the test
+// function flipArray (alltogethernow){
+//   objectlike = "";
+// for (let i=0; i<alltogethernow.length-1; i++){
+//     objectlike += '"' + alltogethernow[i] + '"' + " : " + i + ", ";
+//     objectlike2 = objectlike + '"' + alltogethernow[alltogethernow.length-1]+ '"' + " : " + (i+1) + " ";
+//     objectlike3 = "{ " + objectlike2 + " }";
+//   }
+//   return objectlike3;
+// }
+// flipArray (typetest);
+// console.log(flipArray (typetest));
 
 
 
 
+// This is the correct output (at least it looks like it) However, I don't believe I a made an object.
 
 
 
