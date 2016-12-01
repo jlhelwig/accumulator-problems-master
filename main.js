@@ -36,6 +36,26 @@ function sum(test){
 sum(array1);
 console.log(sum(array1));
 
+// this looks like it would work but doesn't
+// var array1 = [1,2,3];
+// var sum = array1.reduce(function(clbk,array1)){
+//   return clbk + array1;
+// }
+//or
+// From Galvanize practice IT WORKS!!! but not here :(
+// var numbers = [1,2,3];
+//
+// function Sum(total, numbers) {
+//     return total + numbers;
+// }
+//
+// var Sum = (numbers.reduce(Sum));
+// from mdn
+// var sum = [0, 1, 2, 3].reduce(function(a, b) {
+//   return a + b;
+// }, 0);
+// sum is 6
+
 
 
 
@@ -61,7 +81,7 @@ doubleNumbers(array2dbl);
 console.log(doubleNumbers(array2dbl));
 
 
-
+// Should use map here I am thinking
 
 
 /*
@@ -108,6 +128,17 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
+var itemstodbl = "abc"
+function doubleLetters (string7) {
+var newstring = ""
+  for (let i=0; i< string7.length; i++){
+  newstring += string7.charAt(i) + string7.charAt(i);
+  }
+return newstring;
+}
+doubleLetters (itemstodbl);
+console.log (doubleLetters (itemstodbl));
+
 
 
 
@@ -129,7 +160,18 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 NOTE: you can assume each input will be the same length
 */
 
-
+var itemsa = ["a","b","c"];
+var itemsb = ["x","y","z"];
+function interleave (string8,string9) {
+var newstring1 = [];
+  for (let i=0; i< string8.length; i++){
+  newstring1.push(string8[i]);
+  newstring1.push(string9[i]);
+  }
+return newstring1;
+}
+interleave (itemsa,itemsb);
+console.log (interleave (itemsa,itemsb));
 
 
 
@@ -149,10 +191,17 @@ Write function named createRange that will take a number and a default value and
 Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "Hello", "Hello"]
 */
 
-
-
-
-
+var runit = 4
+var junk = "Hello"
+function createRange (digital,verbal){
+newoutput1 = []
+  for (let i=0; i<digital; i++){
+    newoutput1.push(verbal);
+  }
+  return newoutput1;
+}
+createRange (runit,junk);
+console.log(createRange (runit,junk));
 
 
 
