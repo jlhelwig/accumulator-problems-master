@@ -52,13 +52,13 @@ var array2dbl=[1,2,3];
 function doubleNumbers(test1){
   var doubled = [];
   for (let i = 0; i< test1.length; i++){
-    doubled = [test1[i] * 2];
+    done = test1[i] * 2;
+    doubled.splice(i,0,done);
   }
   return doubled;
 }
 doubleNumbers(array2dbl);
 console.log(doubleNumbers(array2dbl));
-
 
 
 
