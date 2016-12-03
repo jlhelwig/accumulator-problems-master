@@ -80,7 +80,10 @@ function doubleNumbers(test1){
 doubleNumbers(array2dbl);
 console.log(doubleNumbers(array2dbl));
 
-
+// function mapfunction (number)
+// return number *2
+// function doubleNumbers (numbers)
+// numbers.map(mapfunction)
 // Should use map here I am thinking
 
 
@@ -262,11 +265,12 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 
 */
 
-
-
-
-
-
+function arraysToObject (arrays) {
+let result = {};
+for (i=0; i<arrays.length; i++){
+result[arrays[i]][0]] = arrays [i][1];
+}return result;
+}
 
 
 
