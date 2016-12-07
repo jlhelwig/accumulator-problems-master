@@ -7,6 +7,7 @@ Challenge: Write function named test that returns the string "This Works!".
 Solution: This one has already been complete for you.
 
 */
+"use strict"
 
 function test() {
  var string ="This Works!";
@@ -131,18 +132,25 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
-var itemstodbl = "abc"
-function doubleLetters (string7) {
-var newstring = ""
-  for (let i=0; i< string7.length; i++){
-  newstring += string7.charAt(i) + string7.charAt(i);
+// var itemstodbl = "abc"
+// function doubleLetters (string7) {
+// var newstring = ""
+//   for (let i=0; i< string7.length; i++){
+//   newstring += string7.charAt(i) + string7.charAt(i);
+//   }
+// return newstring;
+// }
+// doubleLetters (itemstodbl);
+// console.log (doubleLetters (itemstodbl));
+
+function doubleLetters (whatevs) {
+  let results = "";
+  for (let i=0; i<whatevs.length; i++){
+    results += whatevs[i];
+    results += whatevs[i];
   }
-return newstring;
+  return results;
 }
-doubleLetters (itemstodbl);
-console.log (doubleLetters (itemstodbl));
-
-
 
 
 
@@ -160,7 +168,7 @@ Write function named interleave that will take two arrays and interleaves them
 
 Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should return ["a", "d", "b", "e", "c", "f"]
 
-NOTE: you can assume each input will be the same length
+// NOTE: you can assume each input will be the same length
 */
 
 var itemsa = ["a","b","c"];
@@ -220,15 +228,23 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
-var typetest = ["a", "b", "c"];
-function flipArray(arr) {
-  var rv = {};
-  for (var i = 0; i < arr.length; ++i){
-    if (arr[i] !== undefined) rv[i] = arr[i];}
-  return rv;
+function flipArray(arry){
+results = {};
+  for(i=0; i<arry.length; i++){
+    results [arry[i]]=i;
+    // I don't understand this bit, it doesn't seem to put anything in the object
+  }
+  return results
 }
-flipArray (typetest);
-console.log(flipArray (typetest));
+// var typetest = ["a", "b", "c"];
+// function flipArray(arr) {
+//   var rv = {};
+//   for (var i = 0; i < arr.length; ++i){
+//     if (arr[i] !== undefined) rv[i] = arr[i];}
+//   return rv;
+// }
+// flipArray (typetest);
+// console.log(flipArray (typetest));
 
 
 
@@ -264,13 +280,26 @@ Example:
 If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: "Horse", 2015: "Sheep" }
 
 */
-
 function arraysToObject (arrays) {
-let result = {};
-for (i=0; i<arrays.length; i++){
-result[arrays[i]][0]] = arrays [i][1];
-}return result;
+  let result = {}
+  for (let i=0; i < arrays.length; i++) {
+    result[arrays[i][0]] = arrays[i][1]
+  }
+  return result
 }
+// function arraysToObject (arrays) {
+//   let result = {}
+//   for (let i = 0; i < arrays.length; i++) {
+//     result[arrays[i][0]] = arrays[i][1]
+//   }
+//   return result
+// }
+// function arraysToObject (arrays) {
+// let result = {};
+// for (i=0; i<arrays.length; i++){
+// result[arrays[i]][0]] = arrays [i][1];
+// }return result;
+// }
 
 
 
@@ -286,9 +315,15 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
-
-
-
+var checkit = "checkitout";
+function reverseString (backitup) {
+  let olleh ="";
+  for (let i=0; i < backitup.length ; i++){
+olleh = backitup[i] + olleh;
+}
+return olleh
+}
+  console.log (reverseString(checkit))
 
 
 
@@ -311,7 +346,13 @@ If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
 
-
+function repeats (teststring) {
+  let result = true
+  for (let i = 0; i < teststring.length / 2; i++) {
+    result = result && (teststring[i] === teststring[i + teststring.length/2])
+  }
+  return result
+}
 
 
 
@@ -329,9 +370,16 @@ Example:
 
 If you pass it "abcdef" then it should return "ace" because those represent every other letter
 */
+let madeupstring = "abcdefghijklmn"
+function everyOther (madeupstring) {
+skipper = ""
+  for (let i= 0; i<madeupstring.length; i=i+2) {
+    skipper += madeupstring[i];
 
-
-
+  }
+  return skipper
+}
+console.log(everyOther(madeupstring))
 
 
 
@@ -350,7 +398,13 @@ If you pass "aaa" it should return true
 If you pass "aba" it should return false
 */
 
-
+function allEqual (test5) {
+  let alleq = true
+  for (let i=0; i<test5.length - 1; i++) {
+    alleq = alleq && (test5[i] === test5[i+1])
+  }
+  return alleq
+}
 
 
 
@@ -370,7 +424,13 @@ If you pass "45" it should return 9
 If you pass "246" it should return 10
 */
 
-
+function sumLetters (string10) {
+  let x = 0
+  for (let i=0; i<string10.length; i++){
+    x=x + string10[i]
+  }
+  return x
+}
 
 
 
@@ -389,6 +449,15 @@ Example:
 If you pass "you" it should return 2
 */
 
+function countVowels (vowelcheck) {
+let y=0
+  for (let i=0; i<vowelcheck.length; i++){
+    if (["a", "e" ,"i", "o", "u"].includes(vowelcheck[i])){
+      y++
+    }
+  }
+  return y
+}
 
 
 
@@ -412,7 +481,13 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
-
+function split(newarray2){
+  let splitarray = []
+  for (let i=0; i<newarray2.length; i++){
+    splitarray.push(newarray2[i])
+  }
+  return splitarray
+}
 
 
 
@@ -432,9 +507,15 @@ Example:
 
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
-
-
-
+var codedstring = "strings"
+function getCodePoints (codedstring){
+  let coded = []
+  for (let i=0; i< codedstring.length; i++){
+    coded.push(codedstring.codePointAt(i))
+  }
+  return coded
+}
+console.log(getCodePoints(codedstring))
 
 
 
@@ -453,7 +534,13 @@ If you pass "Yo" it should return {Y: 0, o: 1}
 If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 */
 
-
+function letterMap(stringobj) {
+  let objx ={}
+  for (let i=0; i<stringobj.length; i++){
+    objx [stringobj[i]] = i
+  }
+  return objx
+}
 
 
 
@@ -478,9 +565,6 @@ If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 
 
 
-
-
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -494,6 +578,22 @@ If you pass 0,2 it should return false because the only number between 0 and 2 i
 If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
 */
 
+// function letterCount (somethingx)
+// let result = {}
+// for (let i=0; i<somethingx.length; i++){
+//
+// }
+
+// MIND BLOWN!!!
+function threeOdds (min, max) {
+  let odds = []
+  for (let i = min + 1; i < max; i++) {
+    if (i % 2 === 1) {
+      odds.push(i)
+    }
+  }
+  return odds.length >= 3
+}
 
 
 
@@ -516,7 +616,14 @@ If you pass "a", 3, "*" it should return "**a" - that is, a string of length 3, 
 */
 
 
-
+function leftPad (string,length,fillchar){
+  let result = ""
+  for (let i=0; i<length-string.length; i++){
+    result +=  fillchar
+  }
+  result = result + string
+  return result
+}
 
 
 
@@ -532,10 +639,16 @@ Write a function named createString that takes a number and a letter and creates
 Example:
 
 If you pass "a", 3 it should return "aaa"
-If you pass "b", 3 it should return "bb"
+If you pass "b", 3 it should return "bbb"
 */
 
-
+function createString(number,letter){
+  let result = ""
+  for (let i=0; i<number; i++){
+    result +=letter
+  }
+  return result
+}
 
 
 
@@ -558,9 +671,14 @@ If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 */
 
 
+function factorial (numtofactor){
+    let x = 1;
+    for (let i=1; i <= numtofactor; i++){
+      x *= i;
 
-
-
+    }
+    return x
+}
 
 
 
@@ -577,8 +695,13 @@ If you pass 1 it should return [1]
 If you pass 3 it should return [1,2,3]
 */
 
-
-
+function arrayOfNumbers(justdigits){
+  let y = [];
+  for (let i=1; i<= justdigits; i++){
+    y.push(i)
+  }
+  return y
+}
 
 
 
@@ -596,10 +719,16 @@ Example:
 If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "even"}
 */
 
+function evenOdd (start, stop) {
+  let result = {}
+  if (stop - start === 0) { return result }
+  for (let i = start; i <= stop; i++) {
+    result[i] = (i % 2 === 0) ? "even" : "odd"
+  }
+  return result
+}
 
-
-
-
+// this is just weird.... what is ? : ... is it an if then? Why doesn't if else not work with this???
 
 
 
@@ -617,7 +746,7 @@ If you pass 2,"d" it should return {"d": true, "dd": true}
 */
 
 
-
+// what is the 'true' portion of this function???
 
 
 
@@ -638,10 +767,22 @@ If you pass [1,1], 1 it should return true
 If you pass [1,2], 1 it should return false
 */
 
+//
+// function every (whatevs2){
+//   for (let i=0; i< whatevs.length; i++){
+//     result = true
+//   }
+// }
 
 
-
-
+// function every (test5) {
+//   let alleq = true
+//   for (let i=0; i<test5.length - 1; i++) {
+//     alleq = alleq && (test5[i] === test5[i+1])
+//     if alleq
+//   }
+//   return alleq
+// }
 
 
 
@@ -659,10 +800,21 @@ If you pass [3,2], 1 it should return false
 */
 
 
+function some (arrayz,constz) {
+  let resultz = false
+  for (let i=0; i<arrayz.length; i++){
+    if (arrayz[i] === constz) return true
+  }
+  return resultz
+}
 
-
-
-
+// function some (array, value) {
+//   let result = false
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === value) return true
+//   }
+//   return result
+// }
 
 
 /*
@@ -678,7 +830,15 @@ If you pass ["Sue", "Will"] it should return "Sue and Will"
 If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 */
 
-
+function toSentence (arrayq){
+  let output = ""
+  for (let i=0; i<arrayq.length; i++){
+    output += arrayq[i]
+    if (i === arrayq.length-2) {output += " and "}
+    else if (i < arrayq.length -2){output += ", "}
+  }
+  return output
+}
 
 
 
@@ -703,8 +863,13 @@ If you pass ["Sue", "Will"] it should return "SW"
 If you pass ["Java", Script", "Object", "Notation"] it should return "JSON"
 */
 
-
-
+function acronym (strigedarray){
+let outputq = ""
+for (let i=0; i<strigedarray.length; i++){
+  outputq += strigedarray [i][0]
+}
+return outputq
+}
 
 
 
@@ -722,6 +887,15 @@ Example:
 If you pass [0,-3,2,5] it should return -3
 */
 
+function min(arraywmin){
+  let q = arraywmin[0]
+  for (let i=0; i<arraywmin.length; i++){
+      if (arraywmin[i]<q){
+        q = arraywmin[i]
+      }
+  }
+  return q
+  }
 
 
 
