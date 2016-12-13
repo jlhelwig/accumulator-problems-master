@@ -1009,7 +1009,13 @@ If you pass {name: "Will", age: 24} it should return ["name - will", "age - 24"]
 */
 
 
-
+function pairs (object) {
+  let result = []
+  for (let key in object) {
+    result.push(`${key} - ${object[key]}`)
+  }
+  return result
+}
 
 
 
