@@ -918,9 +918,22 @@ Example:
 If you pass [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}] it should return {1: {id: 1, name: "Joe"}, 2: {id: 2, name: "Sue"}}
 
 */
+function index (array, property) {
+  let result = {}
+  for (let i = 0; i < array.length; i++) {
+    result[array[i][property]] = array[i]
+  }
+  return result
+}
 
 
-
+// function index (tested) {
+// let objectnamedx = {};
+// for (let i=1; i<tested.length; i++){
+//   objectnamedx tested [i] [0] = tested [i] ;
+// }
+//   return objectnamedx;
+// }
 
 
 
@@ -938,10 +951,16 @@ Example:
 If you pass {id: 1, name: "Joe"} it should return {1: "id", Joe: "name"}
 */
 
+// function invert (array2rev){
+// let xyz = {};
+// for (let i=0; i<array2rev.length; i++){
+//   xyz array2rev[i][1]=array2rev [i][0];
+// }
+// return xyz
+// }
 
 
-
-
+//wow I suck at this one...
 
 
 
@@ -960,10 +979,20 @@ Example:
 If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "foo - Fred"}
 */
 
+// function addSignature (contract,fname1){
+// let signedc = {};
+// // for (let i=0; i<contract.length; i++){
+//   signedc contract [0] + "-signed" = contract [1] + "-" +fname1;
+// }
+// return signedc
 
-
-
-
+function addSignature (name, documents) {
+  let result = {}
+  for (let key in documents) {
+    result[`${key}-signed`] = `${documents[key]} - ${name}`
+  }
+  return result
+}
 
 
 
